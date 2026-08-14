@@ -66,6 +66,15 @@ defmodule Scry.Engine.Loki.RangeQuery do
 
   @type compiled :: %{selector: String.t(), start_ns: integer(), end_ns: integer()}
 
+  @doc """
+  Extracts a LogQL stream selector (`label_key="source_value"` plus any
+  recognized `WHERE <label> = <literal>` equality) and `query_range`'s
+  own nanosecond `start`/`end` bounds from `wheres` (with `params`
+  resolving any `{:param, name}` placeholder) -- `{:error, {:unsupported,
+  :missing_time_lower_bound}}` when no `"timestamp"` lower bound is
+  extractable. This module's own moduledoc has the complete extraction
+  and precision reasoning.
+  """
   @spec compile([Query.predicate()], String.t(), String.t(), map()) ::
           {:ok, compiled()} | {:error, {:unsupported, term()}}
   def compile(wheres, label_key, source_value, params) do
