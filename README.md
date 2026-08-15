@@ -20,9 +20,8 @@ already established three times over; this package's only real work is
 translating the resulting timestamp-range `WHERE` into LogQL's own
 `query_range` bounds.
 
-Source: <https://github.com/joetjen/scry_engine_loki>. Specs live in
-the separate [`scry`](https://github.com/joetjen/scry) repository; the
-behaviour this implements lives in
+Source: <https://github.com/joetjen/scry_engine_loki>. The behaviour
+this implements lives in
 [`scry_core`](https://github.com/joetjen/scry_core).
 
 ## Usage

@@ -40,7 +40,7 @@ defmodule Scry.Engine.Loki.RangeQuery do
   generically). So a query naming no `"timestamp"` lower bound at all
   declines outright (`{:unsupported, :missing_time_lower_bound}`) rather
   than guessing -- the caller supplies one, via `LAST` (which always
-  lowers to a `:ge` predicate, lang_spec.md §8.2) or an ordinary `WHERE
+  lowers to a `:ge` predicate) or an ordinary `WHERE
   timestamp >= ...`. An upper bound is genuinely optional -- absent,
   it defaults to the current instant (`"as of now"` is always a safe,
   honest default the way "since the beginning of time" is not).

@@ -43,11 +43,11 @@ defmodule Scry.Engine.Loki.MixProject do
       # `Scry.Core.EngineBehaviour` and returns `Scry.Core.Query.t()`-
       # shaped data, so it's the real dependency, not test-only. Switch
       # to a `~> x.y` Hex requirement once scry_core is actually
-      # published (impl_spec.md's own dependency-versions convention).
+      # published.
       {:scry_core, path: "../scry_core"},
 
       # === HTTP CLIENT, NOT A DEDICATED DRIVER ===
-      # impl_spec.md's own roadmap already anticipates this: "no
+      # The roadmap already anticipates this: "no
       # dedicated Elixir driver exists (query API is plain HTTP) --
       # kept as the product name per the rule in §2, rather than
       # naming after a generic HTTP client that isn't Loki-specific".
